@@ -20,6 +20,7 @@ body {
   background-color: $base-background-color;
 
   -webkit-font-smoothing: antialiased;
+  background-color: lighten(green, 70%);
 }
 h1,
 h2,
@@ -88,6 +89,7 @@ picture {
 
 header {
   background-color: $light-gray;
+  display: none;
   .logo {
     display: block;
 
@@ -111,7 +113,8 @@ nav {
 }
 
 section {
-  padding: 0 0 $footer;
+  padding: 100px 0 $footer;
+
 }
 article {
   @extend .clearfix;
