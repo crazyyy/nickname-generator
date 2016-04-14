@@ -19,7 +19,7 @@
 var request = new XMLHttpRequest();
 request.onload = function() {
   var logins = '';
-  var needLogins = 10;
+  var needLogins = 50;
 
   // get the file contents
   var fileContent = this.responseText;
@@ -37,23 +37,21 @@ request.onload = function() {
     if (randomLine.length < 7 ){
       randomLine = randomLine + addNubmer;
       randomLine = randomLine.replace(/\d\d\d/gi, '');
-
-
     } else if (  randomLine.match(/\d+/g)  )  {
       randomLine = randomLine + addNubmer;
       randomLine = randomLine.replace(/\d\d\d/gi, '');
-
     } else {
       randomLine = randomLine;
       randomLine = randomLine + addNubmer;
       randomLine = randomLine.replace(/\d\d\d/gi, '');
-
     }
 
     if (randomLine.length < 7 ) {
       i = i - 1;
+    } else if ( ! randomLine.match(/\d+/g) ) {
+      i = i - 1;
     } else {
-      logins = logins + '3: ' + randomLine + '<br />';
+      logins = logins + '<input type="text" onclick="this.select();" value="' + randomLine + '"/>';
     }
   }
 

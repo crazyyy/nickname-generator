@@ -18,9 +18,9 @@ body {
 
   color: $base-font-color;
   background-color: $base-background-color;
+  background-color: lighten(green, 70%);
 
   -webkit-font-smoothing: antialiased;
-  background-color: lighten(green, 70%);
 }
 h1,
 h2,
@@ -88,8 +88,9 @@ picture {
 }
 
 header {
-  background-color: $light-gray;
   display: none;
+
+  background-color: $light-gray;
   .logo {
     display: block;
 
@@ -113,11 +114,22 @@ nav {
 }
 
 section {
-  padding: 100px 0 $footer;
-
+  padding: 10px 0 $footer;
 }
 article {
   @extend .clearfix;
+  input {
+    display: inline-block !important;
+    float: left;
+
+    width: 33% !important;
+    margin: 0;
+
+    cursor: pointer;
+
+    column-count: 3;
+    column-gap: 40px;
+  }
 }
 .looper {
   @extend .clearfix;
